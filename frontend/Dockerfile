@@ -4,7 +4,6 @@ WORKDIR /app
 COPY package*.json ./
 COPY postcss.config.js tailwind.config.js vite.config.js ./
 COPY src ./src
-COPY public ./public
 RUN npm install
 RUN npm run build
 
