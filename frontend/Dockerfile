@@ -8,6 +8,11 @@ RUN npm install
 RUN npm run build
 
 FROM nginx:alpine AS runner
+
+LABEL version="0.0.2"
+LABEL description="Fixed nginx configuration for React app"
+LABEL maintainer="Manglesh"
+
 COPY --from=builder /app/dist /usr/share/nginx/html
 RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d/default.conf
