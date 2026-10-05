@@ -1,0 +1,31 @@
+:root {
+  --accent: #38bdf8;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --background: #0f172a;
+  --card-background: #111827;
+  --border: #1e293b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--background);
+  color: var(--text-primary);
+}
+
+a {
+  color: inherit;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
