@@ -1,45 +1,79 @@
 import Reveal from "./Reveal";
 
 function Projects() {
-  const projects = [
+  const projectGroups = [
     {
-      title: "Kubernetes Observability Platform",
-      category: "Cloud & DevOps",
+      title: "DevOps & Cloud",
       description:
-        "Built a cloud-native observability platform for monitoring Kubernetes workloads using metrics, logs, and distributed tracing.",
-      technologies: [
-        "Kubernetes",
-        "Prometheus",
-        "Grafana",
-        "OpenTelemetry",
+        "Cloud infrastructure, automation, Kubernetes, observability, and reliability projects.",
+      projects: [
+        {
+          title: "Kubernetes Observability Platform",
+          description:
+            "Built a cloud-native observability platform for monitoring Kubernetes workloads using metrics, logs, and distributed tracing.",
+          technologies: [
+            "Kubernetes",
+            "Prometheus",
+            "Grafana",
+            "OpenTelemetry",
+          ],
+          github: "#",
+        },
+        {
+          title: "CI/CD Automation Platform",
+          description:
+            "Designed and maintained CI/CD pipelines for microservices with automated builds, containerization, security scanning, and deployments.",
+          technologies: [
+            "Jenkins",
+            "Spinnaker",
+            "Docker",
+            "AWS",
+          ],
+          github: "#",
+        },
+        {
+          title: "GitOps Deployment Platform",
+          description:
+            "Implemented GitOps-based application deployment using Kubernetes, Helm, and Argo CD across multiple environments.",
+          technologies: [
+            "AWS EKS",
+            "Helm",
+            "Argo CD",
+            "Kubernetes",
+          ],
+          github: "#",
+        },
       ],
-      github: "#",
     },
+
     {
-      title: "CI/CD Automation Platform",
-      category: "DevOps",
+      title: "Web Development",
       description:
-        "Designed and maintained CI/CD pipelines for microservices with automated builds, containerization, security scanning, and deployments.",
-      technologies: [
-        "Jenkins",
-        "Spinnaker",
-        "Docker",
-        "AWS",
+        "Full-stack web applications, REST APIs, and modern web development projects.",
+      projects: [
+        {
+          title: "Project Name",
+          description:
+            "Project description will be added here.",
+          technologies: [
+            "React",
+            "Node.js",
+            "MongoDB",
+          ],
+          github: "#",
+        },
+        {
+          title: "Project Name",
+          description:
+            "Project description will be added here.",
+          technologies: [
+            "JavaScript",
+            "Node.js",
+            "REST API",
+          ],
+          github: "#",
+        },
       ],
-      github: "#",
-    },
-    {
-      title: "GitOps Deployment Platform",
-      category: "Cloud Native",
-      description:
-        "Implemented GitOps-based application deployment using Kubernetes, Helm, and Argo CD across multiple environments.",
-      technologies: [
-        "AWS EKS",
-        "Helm",
-        "Argo CD",
-        "Kubernetes",
-      ],
-      github: "#",
     },
   ];
 
@@ -53,40 +87,52 @@ function Projects() {
           </div>
         </Reveal>
 
-        <Reveal>
-          <div className="projects-grid">
-            {projects.map((project) => (
-              <article className="project-card" key={project.title}>
-                <div className="project-top">
-                  <span className="project-category">
-                    {project.category}
-                  </span>
-
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="project-link"
-                    >
-                      GitHub ↗
-                    </a>
-                  )}
+        <div className="project-groups">
+          {projectGroups.map((group) => (
+            <Reveal key={group.title}>
+              <div className="project-group">
+                <div className="project-group-heading">
+                  <h3>{group.title}</h3>
+                  <p>{group.description}</p>
                 </div>
 
-                <h3>{project.title}</h3>
+                <div className="projects-grid">
+                  {group.projects.map((project) => (
+                    <article
+                      className="project-card"
+                      key={project.title}
+                    >
+                      <div className="project-top">
+                        <h4>{project.title}</h4>
 
-                <p>{project.description}</p>
+                        {project.github && (
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="project-link"
+                          >
+                            GitHub ↗
+                          </a>
+                        )}
+                      </div>
 
-                <div className="project-technologies">
-                  {project.technologies.map((technology) => (
-                    <span key={technology}>{technology}</span>
+                      <p>{project.description}</p>
+
+                      <div className="project-technologies">
+                        {project.technologies.map((technology) => (
+                          <span key={technology}>
+                            {technology}
+                          </span>
+                        ))}
+                      </div>
+                    </article>
                   ))}
                 </div>
-              </article>
-            ))}
-          </div>
-        </Reveal>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );

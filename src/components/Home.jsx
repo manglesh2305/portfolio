@@ -3,7 +3,7 @@ function Home() {
     <section id="home" className="home">
       <div className="home-content">
         <p className="home-status">
-          <span>●</span> Available for new opportunities
+          <span className="status-dot"></span> Available for projects & opportunities
         </p>
 
         <p className="greeting">Hi, I'm</p>
@@ -15,9 +15,7 @@ function Home() {
         </h2>
 
         <p className="description">
-          I build and operate reliable cloud-native systems,
-          Kubernetes platforms, CI/CD pipelines, and observability
-          solutions.
+          I develop high-quality web applications and deliver production-ready DevOps/SRE solutions across Kubernetes, CI/CD, and cloud platforms.
         </p>
 
         <div className="home-buttons">

@@ -46,7 +46,7 @@ function Experience() {
         <Reveal>
           <div className="section-heading">
             <p className="section-label">EXPERIENCE</p>
-            <h2>My journey so far.</h2>
+            <h2>My journey so far.....</h2>
           </div>
         </Reveal>
 
@@ -57,7 +57,7 @@ function Experience() {
                 className="experience-item"
                 key={`${experience.role}-${experience.period}`}
               >
-                <div className="experience-dot"></div>
+                <div className={`experience-dot ${experience.period.includes("Present") ? "current" : ""}`}></div>
 
                 <div className="experience-card">
                   <div className="experience-header">

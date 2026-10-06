@@ -18,8 +18,7 @@ function About() {
           <div className="about-content">
             <div className="about-text">
               <p>
-                I'm a Software Engineer focused on DevOps, SRE, cloud
-                infrastructure, Kubernetes, CI/CD, and observability.
+                I'm a Software Engineer working across DevOps, SRE, cloud infrastructure, Kubernetes, CI/CD, observability, and modern web development.
               </p>
 
               <p>
@@ -29,26 +28,26 @@ function About() {
               </p>
 
               <p>
-                I enjoy solving production problems, automating repetitive
-                work, improving system reliability, and learning from the
-                challenges that come with operating real-world systems.
+                Alongside my full-time role, I take on freelance projects where I build web applications, automate workflows,
+                improve reliability, and deliver practical DevOps solutions.
+                I enjoy tackling production challenges, streamlining operations, and creating software that makes a real impact.
               </p>
             </div>
 
             <div className="about-highlight">
               <div>
                 <strong>2+</strong>
-                <span>Years Experience</span>
+                <span>Years of Experience</span>
               </div>
 
               <div>
-                <strong>NIT</strong>
-                <span>B.Tech · Jalandhar</span>
+                <strong>NIT Jalandhar</strong>
+                <span>B.Tech · 2019-2023</span>
               </div>
 
               <div>
-                <strong>SRE</strong>
-                <span>Cloud · Kubernetes · DevOps</span>
+                <strong>DevOps & SRE</strong>
+                <span>AWS · Kubernetes · DevOps · CI/CD · Observability</span>
               </div>
             </div>
           </div>
