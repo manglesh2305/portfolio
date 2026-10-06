@@ -148,12 +148,9 @@
 }
 
 /* About Section */
-.about {
-  padding: 100px 20px;
-}
-
 .section-container {
-  max-width: 900px;
+  width: 100%;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -265,10 +262,6 @@
 }
 
 /* Experience Section */
-.experience {
-  padding: 100px 20px;
-}
-
 .experience h2 {
   font-size: clamp(36px, 5vw, 52px);
   line-height: 1.15;
@@ -371,10 +364,6 @@
 }
 
 /* Projects Section */
-.projects {
-  padding: 100px 20px;
-}
-
 .projects h2 {
   font-size: clamp(36px, 5vw, 52px);
   line-height: 1.15;
@@ -594,6 +583,14 @@
 }
 
 /* Common Styles */
+
+.about,
+.skills,
+.experience,
+.projects {
+  padding: 110px 20px;
+}
+
 .about,
 .skills,
 .experience,
@@ -620,17 +617,50 @@
   color: var(--text-primary);
 }
 
+.section-heading h2,
+.about h2,
+.skills h2,
+.experience h2,
+.projects h2 {
+  color: var(--text-primary);
+  font-size: clamp(36px, 5vw, 52px);
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+
+.section-label {
+  margin: 0 0 18px;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
-  .navbar {
-    padding: 18px 20px;
+.navbar {
+    padding: 16px 20px;
+    gap: 20px;
+  }
+
+  .navbar-logo {
+    font-size: 17px;
+    white-space: nowrap;
   }
 
   .navbar-links {
-    gap: 12px;
+    gap: 16px;
+
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .navbar-links::-webkit-scrollbar {
+    display: none;
   }
 
   .navbar-links a {
+    flex-shrink: 0;
     font-size: 13px;
   }
 
@@ -647,7 +677,37 @@
     flex-direction: column;
   }
 
-   .experience-list {
+  .home {
+    min-height: calc(100vh - 65px);
+    padding: 70px 20px;
+  }
+
+  .home h1 {
+    font-size: clamp(44px, 13vw, 64px);
+  }
+
+  .home h2 {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .home-buttons {
+    width: 100%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home-buttons a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .experience-list {
     padding-left: 25px;
   }
 
@@ -664,12 +724,33 @@
     white-space: normal;
   }
 
+  .experience-list {
+    margin-top: 35px;
+  }
+
+  .experience-card {
+    padding: 24px;
+  }
+
+  .experience-card h3 {
+    font-size: 21px;
+  }
+
+  .experience-card p {
+    font-size: 15px;
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
   }
 
   .project-card {
     min-height: auto;
+    padding: 24px;
+  }
+
+  .project-card h3 {
+    font-size: 22px;
   }
 
   .contact {
@@ -689,8 +770,24 @@
     margin-top: 28px;
   }
 
+  .contact {
+    padding: 80px 20px 90px;
+  }
+
+  .contact h2 {
+    font-size: 42px;
+  }
+
+   .about-content {
+    margin-top: 35px;
+  }
+
+  .about-content p {
+    font-size: 16px;
+  }
+
   .footer-content {
-  flex-direction: column;
-  gap: 15px;
-}
+    flex-direction: column;
+    gap: 15px;
+  }
 }
