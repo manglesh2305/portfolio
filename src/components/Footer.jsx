@@ -24,7 +24,7 @@ function Footer() {
 
           {/* LinkedIn */}
           <a
-            href="https://www.linkedin.com/in/manglesh-yadav-05045b1ba/"
+            href="https://www.linkedin.com/in/mangleshy23"
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"
@@ -39,7 +39,7 @@ function Footer() {
 
           {/* Instagram */}
           <a
-            href="https://www.instagram.com/"
+            href="https://www.instagram.com/golu_2305/"
             target="_blank"
             rel="noreferrer"
             aria-label="Instagram"
