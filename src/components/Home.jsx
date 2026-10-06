@@ -29,6 +29,28 @@ function Home() {
             Contact Me
           </a>
         </div>
+
+        <div className="home-socials">
+          <a
+            href="https://github.com/manglesh2305"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub ↗
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/mangleshy23/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn ↗
+          </a>
+
+          <a href="/resume.pdf" target="_blank" rel="noreferrer">
+            Resume ↓
+          </a>
+        </div>
       </div>
     </section>
   );

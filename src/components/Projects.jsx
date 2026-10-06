@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 function Projects() {
   const projects = [
     {
@@ -12,7 +14,6 @@ function Projects() {
         "OpenTelemetry",
       ],
       github: "#",
-      demo: null,
     },
     {
       title: "CI/CD Automation Platform",
@@ -26,7 +27,6 @@ function Projects() {
         "AWS",
       ],
       github: "#",
-      demo: null,
     },
     {
       title: "GitOps Deployment Platform",
@@ -40,62 +40,53 @@ function Projects() {
         "Kubernetes",
       ],
       github: "#",
-      demo: null,
     },
   ];
 
   return (
     <section id="projects" className="projects">
       <div className="section-container">
-        <div className="section-heading">
-          <p className="section-label">PROJECTS</p>
+        <Reveal>
+          <div className="section-heading">
+            <p className="section-label">PROJECTS</p>
+            <h2>Things I've built and worked on.</h2>
+          </div>
+        </Reveal>
 
-          <h2>Things I've built and worked on.</h2>
-        </div>
+        <Reveal>
+          <div className="projects-grid">
+            {projects.map((project) => (
+              <article className="project-card" key={project.title}>
+                <div className="project-top">
+                  <span className="project-category">
+                    {project.category}
+                  </span>
 
-        <div className="projects-grid">
-          {projects.map((project) => (
-            <div className="project-card" key={project.title}>
-              <div className="project-top">
-                <span className="project-category">
-                  {project.category}
-                </span>
-
-                <div className="project-links">
                   {project.github && (
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noreferrer"
+                      className="project-link"
                     >
                       GitHub ↗
                     </a>
                   )}
-
-                  {project.demo && (
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Demo ↗
-                    </a>
-                  )}
                 </div>
-              </div>
 
-              <h3>{project.title}</h3>
+                <h3>{project.title}</h3>
 
-              <p>{project.description}</p>
+                <p>{project.description}</p>
 
-              <div className="project-technologies">
-                {project.technologies.map((technology) => (
-                  <span key={technology}>{technology}</span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
+                <div className="project-technologies">
+                  {project.technologies.map((technology) => (
+                    <span key={technology}>{technology}</span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );

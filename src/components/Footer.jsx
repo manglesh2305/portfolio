@@ -2,11 +2,13 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <p>© 2026 Manglesh Yadav</p>
+        <p>
+          © {new Date().getFullYear()} Manglesh Yadav. Built with React.
+        </p>
 
         <div className="footer-links">
           <a
-            href="https://github.com/"
+            href="https://github.com/manglesh2305"
             target="_blank"
             rel="noreferrer"
           >
@@ -14,7 +16,7 @@ function Footer() {
           </a>
 
           <a
-            href="https://linkedin.com/"
+            href="https://www.linkedin.com/in/manglesh-yadav-05045b1ba/"
             target="_blank"
             rel="noreferrer"
           >

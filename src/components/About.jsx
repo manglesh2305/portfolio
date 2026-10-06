@@ -1,46 +1,58 @@
+import Reveal from "./Reveal";
+
 function About() {
   return (
     <section id="about" className="about">
       <div className="section-container">
-        <div className="section-heading">
-          <p className="section-label">ABOUT ME</p>
+        <Reveal>
+          <div className="section-heading">
+            <p className="section-label">ABOUT ME</p>
 
-          <h2>
-            Building reliable systems and solving real-world problems.
-          </h2>
-        </div>
-
-        <div className="about-content">
-          <div>
-            <p>
-              I'm a Software Engineer focused on DevOps, SRE, cloud
-              infrastructure, Kubernetes, CI/CD, and observability.
-            </p>
-
-            <p>
-              I enjoy working on production systems, improving reliability,
-              automating repetitive tasks, and solving challenging
-              infrastructure problems.
-            </p>
+            <h2>
+              Building reliable systems and solving real-world problems.
+            </h2>
           </div>
+        </Reveal>
 
-          <div className="about-highlight">
-            <div>
-              <strong>2+</strong>
-              <span>Years Experience</span>
+        <Reveal>
+          <div className="about-content">
+            <div className="about-text">
+              <p>
+                I'm a Software Engineer focused on DevOps, SRE, cloud
+                infrastructure, Kubernetes, CI/CD, and observability.
+              </p>
+
+              <p>
+                At Pine Labs, I work on production infrastructure and
+                cloud-native platforms, helping teams deploy, monitor,
+                and operate services reliably at scale.
+              </p>
+
+              <p>
+                I enjoy solving production problems, automating repetitive
+                work, improving system reliability, and learning from the
+                challenges that come with operating real-world systems.
+              </p>
             </div>
 
-            <div>
-              <strong>20+</strong>
-              <span>Dashboards Built</span>
-            </div>
+            <div className="about-highlight">
+              <div>
+                <strong>2+</strong>
+                <span>Years Experience</span>
+              </div>
 
-            <div>
-              <strong>50+</strong>
-              <span>Production Alerts</span>
+              <div>
+                <strong>NIT</strong>
+                <span>B.Tech · Jalandhar</span>
+              </div>
+
+              <div>
+                <strong>SRE</strong>
+                <span>Cloud · Kubernetes · DevOps</span>
+              </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -39,6 +39,19 @@
   color: var(--accent);
 }
 
+.menu-button {
+  display: none;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.navbar-links a.active {
+  color: var(--accent);
+}
+
 /* Home Section */
 .home {
   min-height: calc(100vh - 70px);
@@ -147,6 +160,25 @@
   color: var(--accent);
 }
 
+.home-socials {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 30px;
+}
+
+.home-socials a {
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.home-socials a:hover {
+  color: var(--accent);
+}
+
 /* About Section */
 .section-container {
   width: 100%;
@@ -192,7 +224,7 @@
   margin-top: 50px;
 }
 
-.about-content p {
+.about-text p {
   color: var(--text-secondary);
   font-size: 18px;
   line-height: 1.8;
@@ -227,29 +259,48 @@
   font-size: 14px;
 }
 
+.about-text {
+  max-width: 680px;
+}
+
 /* Skills Section */
+/* =========================
+   SKILLS
+   ========================= */
+
 .skills h2 {
-  font-size: clamp(36px, 5vw, 52px);
-  line-height: 1.15;
-  letter-spacing: -1px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+}
+
+.skills-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+
+.skill-group h3 {
+  margin: 0 0 18px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
 }
 
 .skill-card {
-  padding: 24px;
-
+  padding: 20px;
   background: var(--card-background);
   border: 1px solid var(--border);
-  border-radius: 12px;
-
+  border-radius: 10px;
   color: var(--text-primary);
   font-weight: 500;
+  text-align: center;
 
   transition:
     transform 0.2s ease,
@@ -356,14 +407,35 @@
   white-space: nowrap;
 }
 
-.experience-card p {
+.experience-description {
   margin: 20px 0 0;
-
   color: var(--text-secondary);
   line-height: 1.7;
 }
 
-/* Projects Section */
+.experience-highlights {
+  margin: 20px 0 0;
+  padding-left: 20px;
+  color: var(--text-secondary);
+}
+
+.experience-highlights li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.experience-highlights li::marker {
+  color: var(--accent);
+}
+
+/* =========================
+   PROJECTS
+   ========================= */
+
+.projects {
+  padding: 100px 20px;
+}
+
 .projects h2 {
   font-size: clamp(36px, 5vw, 52px);
   line-height: 1.15;
@@ -374,14 +446,12 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-
   margin-top: 50px;
 }
 
 .project-card {
   display: flex;
   flex-direction: column;
-
   min-height: 360px;
   padding: 30px;
 
@@ -403,7 +473,6 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-
   gap: 15px;
 }
 
@@ -411,37 +480,31 @@
   color: var(--accent);
   font-size: 13px;
   font-weight: 600;
-  text-transform: uppercase;
   letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
-.project-links {
-  display: flex;
-  gap: 12px;
-}
-
-.project-links a {
+.project-link {
   color: var(--text-secondary);
   font-size: 13px;
   text-decoration: none;
+  white-space: nowrap;
 
   transition: color 0.2s ease;
 }
 
-.project-links a:hover {
+.project-link:hover {
   color: var(--accent);
 }
 
 .project-card h3 {
   margin: 30px 0 15px;
-
   font-size: 24px;
   line-height: 1.3;
 }
 
 .project-card p {
   margin: 0;
-
   color: var(--text-secondary);
   line-height: 1.7;
 }
@@ -515,26 +578,54 @@
 
 /* Button */
 
-.contact-button {
+.contact-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: 35px;
+}
+
+.contact-button,
+.contact-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  margin-top: 35px;
   padding: 14px 26px;
 
-  background: var(--accent);
-  color: var(--background);
-
   border-radius: 8px;
-
   text-decoration: none;
+
   font-size: 16px;
   font-weight: 600;
 
   transition:
     transform 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
     box-shadow 0.2s ease;
+}
+
+.contact-button {
+  background: var(--accent);
+  color: var(--background);
+}
+
+.contact-secondary {
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+.contact-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.2);
+}
+
+.contact-secondary:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .contact-button:hover {
@@ -546,8 +637,8 @@
 /* Footer */
 .footer {
   padding: 30px 20px;
-
   border-top: 1px solid var(--border);
+  background: var(--background);
 }
 
 .footer-content {
@@ -636,11 +727,65 @@
   letter-spacing: 2px;
 }
 
+/* =========================
+   SECTION ANIMATION
+   ========================= */
+
+.section-heading,
+.about-content,
+.skills-grid,
+.experience-list,
+.projects-grid,
+.contact-container {
+  animation: sectionFadeUp 0.8s ease both;
+}
+
+@keyframes sectionFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-heading,
+  .about-content,
+  .skills-grid,
+  .experience-list,
+  .projects-grid,
+  .contact-container {
+    animation: none;
+  }
+}
+
+/* =========================
+   SCROLL REVEAL
+   ========================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
 .navbar {
     padding: 16px 20px;
     gap: 20px;
+    position: sticky;
   }
 
   .navbar-logo {
@@ -648,20 +793,64 @@
     white-space: nowrap;
   }
 
-  .navbar-links {
-    gap: 16px;
-
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-
   .navbar-links::-webkit-scrollbar {
     display: none;
   }
 
+
+  .menu-button {
+    display: block;
+
+    position: relative;
+    z-index: 1001;
+  }
+
+  .navbar-links {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    padding: 10px 20px 20px;
+
+    background: rgba(15, 23, 42, 0.97);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid var(--border);
+
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease,
+      visibility 0.2s ease;
+  }
+
+  .navbar-links.menu-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
   .navbar-links a {
-    flex-shrink: 0;
-    font-size: 13px;
+    width: 100%;
+
+    padding: 14px 0;
+
+    color: var(--text-secondary);
+
+    font-size: 16px;
+  }
+
+  .navbar-links a:hover {
+    color: var(--accent);
   }
 
   .about-content {
@@ -669,8 +858,18 @@
     gap: 30px;
   }
 
+  .skills-groups {
+    gap: 35px;
+  }
+
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .skill-card {
+    padding: 16px 10px;
+    font-size: 14px;
   }
 
   .home-buttons {
@@ -740,6 +939,14 @@
     font-size: 15px;
   }
 
+  .experience-highlights {
+    padding-left: 18px;
+  }
+
+  .experience-highlights li {
+    font-size: 15px;
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
   }
@@ -753,13 +960,27 @@
     font-size: 22px;
   }
 
-  .contact {
+ .contact {
     padding: 80px 20px 90px;
   }
 
   .contact h2 {
     font-size: 42px;
     letter-spacing: -1px;
+  }
+
+  .contact-description {
+    font-size: 16px;
+  }
+
+  .contact-actions {
+    flex-direction: column;
+  }
+
+  .contact-button,
+  .contact-secondary {
+    width: 100%;
+    max-width: 260px;
   }
 
   .contact p:not(.section-label) {
@@ -770,19 +991,11 @@
     margin-top: 28px;
   }
 
-  .contact {
-    padding: 80px 20px 90px;
-  }
-
-  .contact h2 {
-    font-size: 42px;
-  }
-
-   .about-content {
+  .about-content {
     margin-top: 35px;
   }
 
-  .about-content p {
+  .about-text p {
     font-size: 16px;
   }
 
@@ -790,4 +1003,10 @@
     flex-direction: column;
     gap: 15px;
   }
+
+  .home-socials {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
 }
