@@ -8,73 +8,60 @@ function Projects() {
         "Cloud infrastructure, automation, Kubernetes, observability, and reliability projects.",
       projects: [
         {
-          title: "Kubernetes Observability Platform",
+          title: "Grafana Migration: EC2 to EKS",
+          type: "Professional Project",
+          company: "Pine Labs",
           description:
-            "Built a cloud-native observability platform for monitoring Kubernetes workloads using metrics, logs, and distributed tracing.",
-          technologies: [
-            "Kubernetes",
-            "Prometheus",
-            "Grafana",
-            "OpenTelemetry",
-          ],
-          github: "#",
-        },
-        {
-          title: "CI/CD Automation Platform",
-          description:
-            "Designed and maintained CI/CD pipelines for microservices with automated builds, containerization, security scanning, and deployments.",
-          technologies: [
-            "Jenkins",
-            "Spinnaker",
-            "Docker",
-            "AWS",
-          ],
-          github: "#",
-        },
-        {
-          title: "GitOps Deployment Platform",
-          description:
-            "Implemented GitOps-based application deployment using Kubernetes, Helm, and Argo CD across multiple environments.",
+            "Migrated Grafana from EC2-based infrastructure to AWS EKS using Grafana Operator, Helm, and Argo CD, transforming the deployment into a GitOps-managed workflow and reducing deployment time by 80%.",
           technologies: [
             "AWS EKS",
+            "Grafana",
             "Helm",
             "Argo CD",
+            "GitOps",
+          ],
+        },
+        {
+          title: "Kubernetes Backup & Disaster Recovery",
+          type: "Professional Project",
+          company: "Pine Labs",
+          description:
+            "Designed and implemented a Velero-based backup and disaster recovery solution for Kubernetes workloads on EKS, enabling automated backup of cluster resources and applications and supporting recovery from infrastructure and deployment failures.",
+          technologies: [
             "Kubernetes",
+            "AWS EKS",
+            "Velero",
+            "AWS",
+            "Disaster Recovery"
           ],
-          github: "#",
+        },
+        {
+          title: "End-to-End Distributed Tracing",
+          type: "Professional Project",
+          company: "Pine Labs",
+          description:
+            "Designed distributed tracing across CloudFront, AWS WAF, and Application Load Balancer using OpenTelemetry Collector and Grafana Tempo, enabling request-level visibility across the infrastructure and application stack.",
+          technologies: [
+            "OpenTelemetry",
+            "Grafana Tempo",
+            "AWS",
+            "CloudFront",
+            "AWS WAF",
+            "ALB",
+            "AWS Lambda"
+          ],
         },
       ],
-    },
+    }
 
-    {
-      title: "Web Development",
-      description:
-        "Full-stack web applications, REST APIs, and modern web development projects.",
-      projects: [
-        {
-          title: "Project Name",
-          description:
-            "Project description will be added here.",
-          technologies: [
-            "React",
-            "Node.js",
-            "MongoDB",
-          ],
-          github: "#",
-        },
-        {
-          title: "Project Name",
-          description:
-            "Project description will be added here.",
-          technologies: [
-            "JavaScript",
-            "Node.js",
-            "REST API",
-          ],
-          github: "#",
-        },
-      ],
-    },
+    // {
+    //   title: "Software Development",
+    //   description:
+    //     "Applications, backend services, and software engineering projects.",
+    //   projects: [
+    //     // Add your personal projects here
+    //   ],
+    // },
   ];
 
   return (
@@ -96,39 +83,31 @@ function Projects() {
                   <p>{group.description}</p>
                 </div>
 
-                <div className="projects-grid">
-                  {group.projects.map((project) => (
-                    <article
-                      className="project-card"
-                      key={project.title}
-                    >
-                      <div className="project-top">
+                {group.projects.length > 0 && (
+                  <div className="projects-grid">
+                    {group.projects.map((project) => (
+                      <article className="project-card" key={project.title}>
+                        <div className="project-meta">
+                          <span>{project.type}</span>
+
+                          {project.company && (
+                            <span>{project.company}</span>
+                          )}
+                        </div>
+
                         <h4>{project.title}</h4>
 
-                        {project.github && (
-                          <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="project-link"
-                          >
-                            GitHub ↗
-                          </a>
-                        )}
-                      </div>
+                        <p>{project.description}</p>
 
-                      <p>{project.description}</p>
-
-                      <div className="project-technologies">
-                        {project.technologies.map((technology) => (
-                          <span key={technology}>
-                            {technology}
-                          </span>
-                        ))}
-                      </div>
-                    </article>
-                  ))}
-                </div>
+                        <div className="project-technologies">
+                          {project.technologies.map((technology) => (
+                            <span key={technology}>{technology}</span>
+                          ))}
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                )}
               </div>
             </Reveal>
           ))}
