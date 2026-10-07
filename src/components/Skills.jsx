@@ -43,6 +43,9 @@ function Skills() {
         "OpenTelemetry",
         "Tempo",
         "Telegraf",
+        "InfluxDB",
+        "Victoria Metrics",
+        "Clickhouse"
       ],
     },
     {
