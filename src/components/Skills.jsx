@@ -28,6 +28,8 @@ function Skills() {
         "Argo CD",
         "Git",
         "GitHub",
+        "GitHub Actions",
+        "Bitbucket",
       ],
     },
     {
