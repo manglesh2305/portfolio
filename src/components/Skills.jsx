@@ -5,6 +5,7 @@ function Skills() {
     {
       title: "Cloud & Infrastructure",
       icon: "☁",
+      animation: "cloud-animation",
       skills: [
         "AWS",
         "Kubernetes",
@@ -20,18 +21,21 @@ function Skills() {
     {
       title: "CI/CD & GitOps",
       icon: "⚙",
+      animation: "gear-animation",
       skills: [
         "Jenkins",
         "Spinnaker",
         "Argo CD",
         "Git",
         "GitHub",
-        "Bitbucket"
+        "GitHub Actions",
+        "Bitbucket",
       ],
     },
     {
       title: "Observability",
       icon: "◉",
+      animation: "observe-animation",
       skills: [
         "Prometheus",
         "Grafana",
@@ -47,6 +51,7 @@ function Skills() {
     {
       title: "Languages & Tools",
       icon: "</>",
+      animation: "code-animation",
       skills: [
         "C++",
         "JavaScript",
@@ -75,7 +80,13 @@ function Skills() {
               <article className="skill-group" key={group.title}>
                 <div className="skill-group-header">
                   <h3>{group.title}</h3>
-                  <span className="skill-group-icon">{group.icon}</span>
+
+                  <span
+                    className={`skill-group-icon ${group.animation}`}
+                    aria-hidden="true"
+                  >
+                    {group.icon}
+                  </span>
                 </div>
 
                 <div className="skill-items">
